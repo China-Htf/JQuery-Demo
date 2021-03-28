@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>原来li</li>
+    </ul>
+    <div class="d">原来div</div>
+    <script>
+        $(function() {
+            // 创建
+            var li = $("<li>新li</li>")
+            // 内部添加 父子关系
+            $("ul").append(li);//尾
+            $("ul").prepend(li);//首
+            // 外部添加 兄弟关系
+            var div = $("<div>新div</div>")
+            $(".d").after(div);//尾
+            $(".d").before(div);//首
+            
+        })
+    </script>
+</body>
+</html>

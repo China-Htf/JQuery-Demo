@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.1.min.js"></script>
+	</head>
+	<body>
+		<textarea class="txt"></textarea>
+		<button type="button" class="btn">发布</button>
+		<ul>
+			
+		</ul>
+		<script>
+			$(function() {
+				$(".btn").on("click", function() {
+					var li = $("<li></li>");
+					li.html($(".txt").val() + "<a href = 'javascript:;'>删除</a>");
+					$("ul").prepend(li);
+						$(".txt").val("");
+				})
+				$("ul").on("click" , "a", function() {
+					$(this).parent().remove();
+				})
+			})
+		</script>
+	</body>
+</html>
